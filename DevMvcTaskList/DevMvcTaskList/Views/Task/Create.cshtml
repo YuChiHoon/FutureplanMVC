@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>할 일 등록</h2>
+
+<!-- /Task/CreateProcess에 post방식으로 전송하겠다-->
+<form action="/Task/CreateProcess" method="post">
+
+    할일제목: <input type="text" name="title" value="" /> <br />
+
+    <input type="submit" value="저장" />
+
+</form>
+
