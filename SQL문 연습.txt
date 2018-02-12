@@ -1,0 +1,122 @@
+CREATE TABLE [dbo].[Communities] (
+    [CommunityId]          INT            IDENTITY (1, 1) NOT NULL,
+    [CommunityName]        VARCHAR (25)   NOT NULL,
+    [CommunityDescription] VARCHAR (255)  NULL,
+    [CreationDate]         DATETIME       DEFAULT (getdate()) NULL,
+
+
+    [MeaderHtnl]           VARCHAR (8000) NULL,
+    [FooterHtnl]           VARCHAR (8000) NULL,
+);
+
+--[!] 예시문: CRUD(Create, Read, Update, Delete)
+
+--입력
+Insert Into Communities(CommunityName, CommunityDescription, MeaderHtnl, FooterHtnl)
+Values('CommunityName', 'CommunityDescription', 'MeaderHtnl', 'FooterHtnl');
+
+--출력
+Select * From Communities Order By CreationDate Desc;
+
+--상세보기
+Select * From Communities Where CommunityId = 1;
+
+--수정
+Update Communities
+Set
+   CommunityName = 'CommunityName2',
+   CommunityDescription = 'CommunityDescription',
+   MeaderHtnl = 'MeaderHtnl',
+   FooterHtnl = 'FooterHtnl'
+Where
+   CommunityId = 1;
+
+--삭제
+Delete Communities Where CommunityId = 1;
+
+--검색
+Select * From Communities Where CommunityName Like '%Co%';
+
+
+--[!] 저장 프로시저(Add(Write), GetAll(List), Get(View), Ipdate(Edit), Delete, Find(Search))
+
+--입력 저장 프로시저
+Create Procedure dbo.AddCommunity
+    @CommunityName        VARCHAR (25),
+    @CommunityDescription VARCHAR (255),
+    @MeaderHtnl           VARCHAR (8000),
+    @FooterHtnl           VARCHAR (8000),
+As
+    Insert Into Communities(CommunityName, CommunityDescription, MeaderHtnl, FooterHtnl)
+    Values(@CommunityName, @CommunityDescription, @MeaderHtnl, @FooterHtnl);
+Go
+
+--입력 저장 프로시저 테스트
+Exec AddCommunity '데브렉','온라인 교육 사이트', '헤더', '푸터'
+Go
+
+--출력 저장 프로시저
+Create Proc dbo.GetCommunities
+As
+    Select * From Communities Order By CreationDate Desc;
+Go
+
+--출력 저장 프로시저 테스트
+Execute GetCommunities
+Go
+
+--상세보기 저장 프로시저
+Create Proc dbo.GetCommunityById
+As
+    Select * From Communities Where CommunityId = @CommunityId;
+Go
+
+--상세보기 저장 프로시저 테스트
+Execute GetCommunityById 2
+Go
+
+--수정 저장프로시저
+Create Proc dbo.UpdateCommunity
+    @CommunityName        VARCHAR (25),
+    @CommunityDescription VARCHAR (255),
+    @MeaderHtnl           VARCHAR (8000),
+    @FooterHtnl           VARCHAR (8000),
+    @CommunityId          Int
+As
+   Update Communities
+   Set
+      CommunityName = @CommunityName,
+      CommunityDescription = @CommunityDescription,
+      MeaderHtnl = @MeaderHtnl,
+      FooterHtnl = @FooterHtnl
+   Where
+      CommunityId = @CommunityId;
+Go
+
+--수정 저장프로시저 테스트
+Execute UpdateCommunity '커뮤니티2','커뮤니티2입니다','헤더 영역','푸터 영역',2
+Go
+
+
+--삭제 저장프로시저
+Create Procedure DeleteCommunity
+   @CommunityId Int
+As
+   Delete Communities Where CommunityId = @CommunityId;
+Go
+
+--삭제 저장프로시저 테스트
+Execute DeleteCommunity 2
+Go
+
+
+--검색 저장프로시저
+Create Proc dbo.SearchCommunity
+   @SearchQuery VarChar(25)
+As
+   Select * From Communities Where CommunityName Like '%' + @SearchQuery +'%';
+Go
+
+--검색 저장프로시저 테스트
+Execute SearchCommunity '데브'
+Go

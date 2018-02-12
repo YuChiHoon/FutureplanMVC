@@ -1,0 +1,12 @@
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\MemoEngine.dll.config
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\MemoEngine.dll
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\MemoEngine.pdb
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\obj\Debug\MemoEngine.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\obj\Debug\MemoEngine.dll
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\obj\Debug\MemoEngine.pdb
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\Dapper.dll
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\Dapper.xml
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\obj\Debug\MemoEngine.csprojResolveAssemblyReference.cache
