@@ -9,4 +9,3 @@ C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\obj\Debug\MemoEngine.pdb
 C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\Dapper.dll
 C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\Dapper.xml
 C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\user\source\repos\MVC\MemoEngine\MemoEngine\obj\Debug\MemoEngine.csprojResolveAssemblyReference.cache
